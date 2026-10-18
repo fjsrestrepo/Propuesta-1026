@@ -186,6 +186,10 @@
     .stage b{font-size:13px;}
   }
 
+  /* ---------- WEEKLY ACTIONS TABLE (Nosotros) ---------- */
+  .wtable td{font-size:12.5px;color:var(--muted);line-height:1.55;vertical-align:top;}
+  .wtable td.witem{color:var(--cream);font-weight:700;font-size:13px;white-space:nowrap;padding-right:18px;}
+
   /* ---------- ETAPA 2 COLLAPSIBLE ---------- */
   .etapa2{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;}
   .etapa2 summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--cream);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .18s;}
@@ -204,6 +208,17 @@
   .inv summary:hover{color:var(--acc);}
   .inv summary::after{content:"+";font-size:20px;font-weight:800;color:var(--acc);transition:transform .18s;line-height:1;}
   .inv[open] summary::after{content:"−";}
+
+  /* ---------- PLAN DE TRABAJO (cuadros por artista) ---------- */
+  .plan-grid{margin:0 0 20px;}
+  .plan-grid .area::after{display:none;}
+  .plan-grid.g4{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:900px){
+    .plan-grid.g4{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:480px){
+    .plan-grid.g4{grid-template-columns:1fr;}
+  }
 
   /* ---------- HEADER / NAV ---------- */
   .topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap;padding:12px 26px;background:rgba(17,16,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -380,53 +395,33 @@
           <div class="stage"><span class="stage-num">02</span><div><b>Etapa 2 · Continuidad</b><small>Segundo trimestre</small></div></div>
         </div>
         <p class="flow-note" style="margin:-8px 0 18px;"><b>Etapa de diagnóstico.</b> Revisión del estado actual de cada artista (música, redes, marca y audiencia), línea base de métricas y definición de objetivos y KPIs antes de iniciar el lanzamiento.</p>
-        <div class="flow-areas">
-          <div class="area"><b>Producción Musical</b>
-            <p class="area-desc">Producción de canciones con calidad de estudio, audiovisuales y locaciones para un lanzamiento profesional.</p>
-            <ul class="area-steps">
-              <li>Producción de canciones</li>
-              <li>Audiovisuales (Visualizer Pro)</li>
-              <li>Locaciones de grabación</li>
-              <li>Distribución en plataformas</li>
-            </ul>
-          </div>
-          <div class="area"><b>Desarrollo Artístico</b>
-            <p class="area-desc">Construcción de la identidad visual y dirección artística de cada proyecto, con piezas para plataformas y redes.</p>
-            <ul class="area-steps">
-              <li>Identidad visual</li>
-              <li>Dirección artística</li>
-              <li>Diseño gráfico y carátulas</li>
-              <li>Piezas para redes</li>
-            </ul>
-          </div>
-          <div class="area"><b>Marketing</b>
-            <p class="area-desc">Community management y pauta digital para hacer crecer la comunidad y activar la audiencia.</p>
-            <ul class="area-steps">
-              <li>Community management</li>
-              <li>Creación y edición de contenido</li>
-              <li>Pauta en Meta Ads</li>
-              <li>Activación de comunidad</li>
-            </ul>
-          </div>
-          <div class="area"><b>Desarrollo Digital</b>
-            <p class="area-desc">Estrategia digital basada en datos: audiencia, influencers y posicionamiento en TikTok y YouTube.</p>
-            <ul class="area-steps">
-              <li>Diagnóstico de audiencia</li>
-              <li>Micro influencers</li>
-              <li>Tendencias en TikTok</li>
-              <li>Posicionamiento en YouTube</li>
-            </ul>
-          </div>
-          <div class="area"><b>Booking y RP</b>
-            <p class="area-desc">Gestión de presentaciones, relaciones públicas y logística para conectar al artista con su público.</p>
-            <ul class="area-steps">
-              <li>Gestión de booking</li>
-              <li>Relaciones públicas (Valle)</li>
-              <li>Transporte y viáticos</li>
-              <li>Tráfico en establecimientos</li>
-            </ul>
-          </div>
-        </div>
+        <table class="wtable">
+          <thead>
+            <tr><th>Item</th><th>Acciones estimadas por semana</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="witem">Producción Musical</td>
+              <td>Producción y mezcla de canciones con avance semanal, grabación de audiovisuales (Visualizer Pro), selección de locaciones y coordinación de distribución en plataformas.</td>
+            </tr>
+            <tr>
+              <td class="witem">Desarrollo Artístico</td>
+              <td>Avance de identidad visual y dirección artística, diseño de carátulas y producción de piezas para redes (3–5 piezas por semana).</td>
+            </tr>
+            <tr>
+              <td class="witem">Marketing</td>
+              <td>Community management diario, creación y edición de contenido (4–5 publicaciones por semana), pauta activa en Meta Ads y activación de comunidad.</td>
+            </tr>
+            <tr>
+              <td class="witem">Desarrollo Digital</td>
+              <td>Monitoreo semanal de audiencia y métricas, gestión de 1 micro influencer por semana y seguimiento de tendencias en TikTok y YouTube.</td>
+            </tr>
+            <tr>
+              <td class="witem">Booking y RP</td>
+              <td>Gestión de 2–3 contactos de booking por semana, relaciones públicas (Valle), coordinación de transporte y viáticos para presentaciones.</td>
+            </tr>
+          </tbody>
+        </table>
         <div class="flow-rail"><span class="rail-dot"></span> Dirección Operativa · eje transversal del plan</div>
         <p class="flow-note">El trabajo fluye de forma transversal: Dirección Operativa cruza todas las áreas en ambas etapas, alineado al diagrama de Gantt y con reportes periódicos para el inversionista.</p>
       </div>
@@ -445,6 +440,60 @@
       <div style="margin-top:14px;"><span class="badge g">Producción musical</span> <span class="badge g">Desarrollo artístico</span> <span class="badge a">Modelo completo</span></div>
     </div>
     <div class="tbl-wrap">
+      <div class="grid g3">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 150.274.377</div><div class="sub">≈ USD 47.146</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 127.295.400</div><div class="sub">≈ USD 39.937</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 87.083</div><div class="sub">≈ COP 277.569.777</div></div>
+      </div>
+      <div class="foot" style="margin-top:14px;">* Los equipos de grabación de contenido se cargan al total de la propuesta. · Rubros de pago único no se repiten en la Etapa 2.</div>
+      <div class="flow-title" style="margin-top:22px;">Plan de trabajo</div>
+      <div class="flow-areas plan-grid">
+        <div class="area"><b>Producción Musical</b>
+          <p class="area-desc">Producción de canciones con calidad de estudio, audiovisuales y locaciones para un lanzamiento profesional.</p>
+          <ul class="area-steps">
+            <li>Producción de canciones</li>
+            <li>Audiovisuales (Visualizer Pro)</li>
+            <li>Locaciones de grabación</li>
+            <li>Distribución en plataformas</li>
+          </ul>
+        </div>
+        <div class="area"><b>Desarrollo Artístico</b>
+          <p class="area-desc">Construcción de la identidad visual y dirección artística de cada proyecto, con piezas para plataformas y redes.</p>
+          <ul class="area-steps">
+            <li>Identidad visual</li>
+            <li>Dirección artística</li>
+            <li>Diseño gráfico y carátulas</li>
+            <li>Piezas para redes</li>
+          </ul>
+        </div>
+        <div class="area"><b>Marketing</b>
+          <p class="area-desc">Community management y pauta digital para hacer crecer la comunidad y activar la audiencia.</p>
+          <ul class="area-steps">
+            <li>Community management</li>
+            <li>Creación y edición de contenido</li>
+            <li>Pauta en Meta Ads</li>
+            <li>Activación de comunidad</li>
+          </ul>
+        </div>
+        <div class="area"><b>Desarrollo Digital</b>
+          <p class="area-desc">Estrategia digital basada en datos: audiencia, influencers y posicionamiento en TikTok y YouTube.</p>
+          <ul class="area-steps">
+            <li>Diagnóstico de audiencia</li>
+            <li>Micro influencers</li>
+            <li>Tendencias en TikTok</li>
+            <li>Posicionamiento en YouTube</li>
+          </ul>
+        </div>
+        <div class="area"><b>Booking y RP</b>
+          <p class="area-desc">Gestión de presentaciones, relaciones públicas y logística para conectar al artista con su público.</p>
+          <ul class="area-steps">
+            <li>Gestión de booking</li>
+            <li>Relaciones públicas (Valle)</li>
+            <li>Transporte y viáticos</li>
+            <li>Tráfico en establecimientos</li>
+          </ul>
+        </div>
+      </div>
       <details class="inv">
         <summary>Ver detalle de la inversión</summary>
         <table>
@@ -487,12 +536,6 @@
         </tbody>
       </table>
       </details>
-      <div class="foot">* Los equipos de grabación de contenido se cargan al total de la propuesta. · Rubros de pago único no se repiten en la Etapa 2.</div>
-      <div class="grid g3" style="margin-top:18px;">
-        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 150.274.377</div><div class="sub">≈ USD 47.146</div></div>
-        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 127.295.400</div><div class="sub">≈ USD 39.937</div></div>
-        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 87.083</div><div class="sub">≈ COP 277.569.777</div></div>
-      </div>
       <details class="etapa2">
         <summary>Detalle de la Etapa 2 <span class="t2">COP 127.295.400 · ≈ USD 39.937</span></summary>
         <div class="etapa2-body">
@@ -534,6 +577,51 @@
       <div style="margin-top:14px;"><span class="badge g">Marketing</span> <span class="badge g">Desarrollo digital</span> <span class="badge a">Enfoque promocional</span></div>
     </div>
     <div class="tbl-wrap">
+      <div class="grid g3">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 112.028.977</div><div class="sub">≈ USD 35.147</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 100.110.000</div><div class="sub">≈ USD 31.408</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 66.555</div><div class="sub">≈ COP 212.138.977</div></div>
+      </div>
+      <div class="foot" style="margin-top:14px;">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
+      <div class="flow-title" style="margin-top:22px;">Plan de trabajo</div>
+      <div class="flow-areas plan-grid g4">
+        <div class="area"><b>Desarrollo Artístico</b>
+          <p class="area-desc">Construcción de la identidad visual y dirección artística de cada proyecto, con piezas para plataformas y redes.</p>
+          <ul class="area-steps">
+            <li>Identidad visual</li>
+            <li>Dirección artística</li>
+            <li>Diseño gráfico y carátulas</li>
+            <li>Piezas para redes</li>
+          </ul>
+        </div>
+        <div class="area"><b>Marketing</b>
+          <p class="area-desc">Community management y pauta digital para hacer crecer la comunidad y activar la audiencia.</p>
+          <ul class="area-steps">
+            <li>Community management</li>
+            <li>Creación y edición de contenido</li>
+            <li>Pauta en Meta Ads</li>
+            <li>Activación de comunidad</li>
+          </ul>
+        </div>
+        <div class="area"><b>Desarrollo Digital</b>
+          <p class="area-desc">Estrategia digital basada en datos: audiencia, influencers y posicionamiento en TikTok y YouTube.</p>
+          <ul class="area-steps">
+            <li>Diagnóstico de audiencia</li>
+            <li>Micro influencers</li>
+            <li>Tendencias en TikTok</li>
+            <li>Posicionamiento en YouTube</li>
+          </ul>
+        </div>
+        <div class="area"><b>Booking y RP</b>
+          <p class="area-desc">Gestión de presentaciones, relaciones públicas y logística para conectar al artista con su público.</p>
+          <ul class="area-steps">
+            <li>Gestión de booking</li>
+            <li>Relaciones públicas (Valle)</li>
+            <li>Transporte y viáticos</li>
+            <li>Tráfico en establecimientos</li>
+          </ul>
+        </div>
+      </div>
       <details class="inv">
         <summary>Ver detalle de la inversión</summary>
         <table>
@@ -561,12 +649,6 @@
         </tbody>
       </table>
       </details>
-      <div class="foot">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
-      <div class="grid g3" style="margin-top:18px;">
-        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 112.028.977</div><div class="sub">≈ USD 35.147</div></div>
-        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 100.110.000</div><div class="sub">≈ USD 31.408</div></div>
-        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 66.555</div><div class="sub">≈ COP 212.138.977</div></div>
-      </div>
       <details class="etapa2">
         <summary>Detalle de la Etapa 2 <span class="t2">COP 100.110.000 · ≈ USD 31.408</span></summary>
         <div class="etapa2-body">
@@ -601,6 +683,51 @@
       <div style="margin-top:14px;"><span class="badge g">Talento emergente</span> <span class="badge g">Lanzamiento</span> <span class="badge a">Costo optimizado</span></div>
     </div>
     <div class="tbl-wrap">
+      <div class="grid g3">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 67.258.977</div><div class="sub">≈ USD 21.101</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 60.680.000</div><div class="sub">≈ USD 19.037</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 40.139</div><div class="sub">≈ COP 127.938.977</div></div>
+      </div>
+      <div class="foot" style="margin-top:14px;">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
+      <div class="flow-title" style="margin-top:22px;">Plan de trabajo</div>
+      <div class="flow-areas plan-grid g4">
+        <div class="area"><b>Desarrollo Artístico</b>
+          <p class="area-desc">Construcción de la identidad visual y dirección artística de cada proyecto, con piezas para plataformas y redes.</p>
+          <ul class="area-steps">
+            <li>Identidad visual</li>
+            <li>Dirección artística</li>
+            <li>Diseño gráfico y carátulas</li>
+            <li>Piezas para redes</li>
+          </ul>
+        </div>
+        <div class="area"><b>Marketing</b>
+          <p class="area-desc">Community management y pauta digital para hacer crecer la comunidad y activar la audiencia.</p>
+          <ul class="area-steps">
+            <li>Community management</li>
+            <li>Creación y edición de contenido</li>
+            <li>Pauta en Meta Ads</li>
+            <li>Activación de comunidad</li>
+          </ul>
+        </div>
+        <div class="area"><b>Desarrollo Digital</b>
+          <p class="area-desc">Estrategia digital basada en datos: audiencia, influencers y posicionamiento en TikTok y YouTube.</p>
+          <ul class="area-steps">
+            <li>Diagnóstico de audiencia</li>
+            <li>Micro influencers</li>
+            <li>Tendencias en TikTok</li>
+            <li>Posicionamiento en YouTube</li>
+          </ul>
+        </div>
+        <div class="area"><b>Booking y RP</b>
+          <p class="area-desc">Gestión de presentaciones, relaciones públicas y logística para conectar al artista con su público.</p>
+          <ul class="area-steps">
+            <li>Gestión de booking</li>
+            <li>Relaciones públicas (Valle)</li>
+            <li>Transporte y viáticos</li>
+            <li>Tráfico en establecimientos</li>
+          </ul>
+        </div>
+      </div>
       <details class="inv">
         <summary>Ver detalle de la inversión</summary>
         <table>
@@ -629,12 +756,6 @@
         </tbody>
       </table>
       </details>
-      <div class="foot">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
-      <div class="grid g3" style="margin-top:18px;">
-        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 67.258.977</div><div class="sub">≈ USD 21.101</div></div>
-        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 60.680.000</div><div class="sub">≈ USD 19.037</div></div>
-        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 40.139</div><div class="sub">≈ COP 127.938.977</div></div>
-      </div>
       <details class="etapa2">
         <summary>Detalle de la Etapa 2 <span class="t2">COP 60.680.000 · ≈ USD 19.037</span></summary>
         <div class="etapa2-body">
@@ -674,6 +795,55 @@
       <div class="card"><div class="lbl">Etapa 2 (trimestre 2)</div><div class="val">COP 206.694.150</div><div class="sub">≈ USD 64.847</div></div>
       <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 146.515</div><div class="sub">≈ COP 467.003.682</div></div>
     </div>
+    <div class="flow-title" style="margin-top:22px;">Plan de trabajo</div>
+    <div class="flow-areas plan-grid">
+      <div class="area"><b>Producción Musical</b>
+        <p class="area-desc">Producción de canciones con calidad de estudio, audiovisuales y locaciones para un lanzamiento profesional.</p>
+        <ul class="area-steps">
+          <li>Producción de canciones</li>
+          <li>Audiovisuales (Visualizer Pro)</li>
+          <li>Locaciones de grabación</li>
+          <li>Distribución en plataformas</li>
+        </ul>
+      </div>
+      <div class="area"><b>Desarrollo Artístico</b>
+        <p class="area-desc">Construcción de la identidad visual y dirección artística de cada proyecto, con piezas para plataformas y redes.</p>
+        <ul class="area-steps">
+          <li>Identidad visual</li>
+          <li>Dirección artística</li>
+          <li>Diseño gráfico y carátulas</li>
+          <li>Piezas para redes</li>
+        </ul>
+      </div>
+      <div class="area"><b>Marketing</b>
+        <p class="area-desc">Community management y pauta digital para hacer crecer la comunidad y activar la audiencia.</p>
+        <ul class="area-steps">
+          <li>Community management</li>
+          <li>Creación y edición de contenido</li>
+          <li>Pauta en Meta Ads</li>
+          <li>Activación de comunidad</li>
+        </ul>
+      </div>
+      <div class="area"><b>Desarrollo Digital</b>
+        <p class="area-desc">Estrategia digital basada en datos: audiencia, influencers y posicionamiento en TikTok y YouTube.</p>
+        <ul class="area-steps">
+          <li>Diagnóstico de audiencia</li>
+          <li>Micro influencers</li>
+          <li>Tendencias en TikTok</li>
+          <li>Posicionamiento en YouTube</li>
+        </ul>
+      </div>
+      <div class="area"><b>Booking y RP</b>
+        <p class="area-desc">Gestión de presentaciones, relaciones públicas y logística para conectar al artista con su público.</p>
+        <ul class="area-steps">
+          <li>Gestión de booking</li>
+          <li>Relaciones públicas (Valle)</li>
+          <li>Transporte y viáticos</li>
+          <li>Tráfico en establecimientos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot" style="margin-top:0;">* Aplica según el artista: la Producción Musical corresponde únicamente a Miguel La M; las demás áreas aplican a los tres artistas.</div>
     <div class="tbl-wrap">
       <details class="inv">
         <summary>Ver detalle de la inversión</summary>
