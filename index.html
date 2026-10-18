@@ -195,12 +195,80 @@
     .sheet{page-break-inside:avoid;}
     .foot-brand{display:block;}
   }
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .wrap{padding:28px 22px 88px;}
+    .cover{padding:46px 30px 42px;}
+    .sheet-head{padding:24px 24px 20px;}
+    .g3{grid-template-columns:1fr 1fr;}
+    .kpi{grid-template-columns:1fr 1fr;}
+    .card .val{font-size:23px;}
+    .tbl-wrap{padding:20px 22px 24px;}
+  }
   @media (max-width:760px){
-    .g2,.g3,.kpi{grid-template-columns:1fr 1fr;}
-    .cover h1{font-size:34px;}
-    .sheet-head h2{font-size:26px;}
-    .tbl-wrap{padding:18px 16px 22px;}
-    .chart-groups{flex-direction:column;align-items:center;}
+    .wrap{padding:22px 16px 92px;}
+    .sheet{border-radius:14px;margin-bottom:22px;}
+    .sheet-head{padding:20px 18px 18px;}
+    .sheet-head h2{font-size:24px;}
+    .sheet-head p.lead{font-size:14px;}
+    .cover{padding:32px 18px 30px;}
+    .cover h1{font-size:30px;line-height:1.12;}
+    .cover .sub{font-size:15px;margin-top:14px;}
+    .cover .rule{margin:24px 0;}
+    .cover .meta{margin-top:26px;}
+    .logo{width:64px;height:64px;border-radius:16px;}
+    .cover-brand{gap:14px;}
+    .wordmark{font-size:13px;letter-spacing:.28em;}
+    .chips{gap:10px;margin-top:22px;}
+    .chip{padding:9px 15px;font-size:13px;}
+    .g2,.g3,.kpi{grid-template-columns:1fr 1fr;gap:12px;}
+    .card{padding:15px 16px;}
+    .card .val{font-size:21px;}
+    .tbl-wrap{padding:16px 12px 20px;-webkit-overflow-scrolling:touch;}
+    table{font-size:12.5px;}
+    thead th{padding:9px 8px;font-size:10px;letter-spacing:.08em;}
+    tbody td{padding:8px;}
+    .grp td{padding:10px 8px;letter-spacing:.18em;}
+    .topbar{padding:10px 14px;gap:10px;}
+    .brand-logo{width:34px;height:34px;border-radius:8px;}
+    .brand-txt{font-size:13px;}
+    .tabs{position:relative;flex-wrap:nowrap;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
+    .tabs::-webkit-scrollbar{display:none;}
+    .tabs button{flex:none;white-space:nowrap;font-size:12.5px;padding:9px 13px;}
+    .pager{padding:10px 14px;gap:8px;}
+    .pager button{font-size:12.5px;padding:9px 13px;}
+    .pager #pageLabel{font-size:11.5px;}
+    .chart{padding:14px 12px;margin:16px 0 6px;}
+    .chart-groups{flex-direction:column;align-items:center;gap:18px;}
+    .chart-group-label{margin-bottom:22px;}
+    .cols{gap:12px;}
+    .col{width:78px;}
+    .col-bar{width:58px;}
+    .col-track{height:140px;}
+    .how-item{flex-direction:column;gap:8px;}
+    .how-num{width:auto;}
+    .terms{margin:6px 0 0 8px;}
+    .etapa2 summary{padding:12px 14px;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:18px 12px 96px;}
+    .g2,.g3,.kpi{grid-template-columns:1fr;}
+    .cover h1{font-size:26px;}
+    .cover .sub{font-size:14px;}
+    .sheet-head h2{font-size:22px;}
+    .sheet-head{padding:18px 16px 16px;}
+    .cover{padding:28px 14px 26px;}
+    .chip{padding:8px 13px;font-size:12px;}
+    .card .val{font-size:20px;}
+    .cols{gap:8px;}
+    .col{width:64px;}
+    .col-bar{width:48px;}
+    .col-track{height:118px;}
+    .col-bar span{font-size:10px;}
+    .col-tag{font-size:9px;}
+    .tabs button{font-size:12px;padding:8px 12px;}
+    .pager button{font-size:12px;padding:9px 11px;}
+    .brand-txt{font-size:12px;}
   }
 </style>
 </head>
@@ -730,6 +798,14 @@
     panels.forEach(function (p, idx) { p.classList.toggle('active', idx === current); });
     tabs.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-target') === panels[current].id); });
     if (pageLabel) pageLabel.textContent = (current + 1) + ' / ' + panels.length;
+    var activeTab = tabs.find(function (b) { return b.classList.contains('active'); });
+    if (activeTab) {
+      var nav = activeTab.parentElement;
+      if (nav && nav.scrollWidth > nav.clientWidth && typeof nav.scrollTo === 'function') {
+        var target = activeTab.offsetLeft - (nav.clientWidth - activeTab.offsetWidth) / 2;
+        nav.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+      }
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
