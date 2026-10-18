@@ -152,6 +152,35 @@
   .how-item b{display:block;color:var(--cream);font-size:14px;margin-bottom:3px;}
   .how-item p{color:var(--muted);font-size:13px;line-height:1.55;}
 
+  /* ---------- PLAN DE TRABAJO FLOW (Nosotros) ---------- */
+  .flow{margin-top:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:20px 22px 22px;}
+  .flow-title{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:16px;}
+  .flow-stages{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:24px;}
+  .stage{display:flex;align-items:center;gap:10px;border:1px solid var(--acc-line);background:var(--acc-tint2);border-radius:12px;padding:10px 16px;}
+  .stage-num{font-weight:800;color:var(--acc);font-size:24px;line-height:1;font-variant-numeric:tabular-nums;}
+  .stage b{display:block;font-size:14px;color:var(--cream);}
+  .stage small{color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
+  .stage-arrow{font-size:24px;color:var(--acc);font-weight:700;line-height:1;}
+  .flow-areas{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .area{position:relative;border:1px solid var(--line);background:var(--ink2);border-radius:10px;padding:12px 8px;text-align:center;transition:border-color .18s ease, background .18s ease;}
+  .area b{display:block;font-size:12.5px;color:var(--cream);line-height:1.3;}
+  .area::after{content:"";position:absolute;left:50%;bottom:-15px;width:2px;height:15px;background:var(--acc-line);transform:translateX(-50%);}
+  .area:hover{border-color:var(--acc);background:var(--panel2);}
+  .flow-rail{margin-top:15px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--acc-line);background:var(--acc-tint);border-radius:10px;padding:11px 14px;font-size:12px;font-weight:700;color:var(--cream);letter-spacing:.05em;text-transform:uppercase;text-align:center;}
+  .rail-dot{width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);flex:none;}
+  .flow-note{margin-top:12px;font-size:12px;color:var(--muted2);line-height:1.6;}
+  @media (max-width:900px){
+    .flow-areas{grid-template-columns:repeat(3,1fr);}
+    .area::after{display:none;}
+    .flow-rail{margin-top:6px;}
+  }
+  @media (max-width:480px){
+    .flow-areas{grid-template-columns:repeat(2,1fr);}
+    .stage{padding:8px 12px;}
+    .stage-num{font-size:20px;}
+    .stage b{font-size:13px;}
+  }
+
   /* ---------- ETAPA 2 COLLAPSIBLE ---------- */
   .etapa2{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;}
   .etapa2 summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--cream);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .18s;}
@@ -327,6 +356,24 @@
         <div class="how-item"><span class="how-num">01</span><div><b>Etapa 1 · Lanzamiento</b><p>Primer trimestre de preparación, producción y activación de cada artista para salir al mercado con un plan medible desde el primer día.</p></div></div>
         <div class="how-item"><span class="how-num">02</span><div><b>Etapa 2 · Continuidad</b><p>Segundo trimestre de sostenimiento y amplificación de la operación para consolidar el posicionamiento y los resultados alcanzados.</p></div></div>
         <div class="how-item"><span class="how-num">03</span><div><b>Seguimiento y control</b><p>Acompañamiento permanente, cronograma alineado al diagrama de Gantt, reportes mensuales y reporte de cierre por etapa para el inversionista.</p></div></div>
+      </div>
+      <div class="flow">
+        <div class="flow-title">Plan de trabajo · Flujo transversal</div>
+        <div class="flow-stages">
+          <div class="stage"><span class="stage-num">01</span><div><b>Etapa 1 · Lanzamiento</b><small>Primer trimestre</small></div></div>
+          <div class="stage-arrow">→</div>
+          <div class="stage"><span class="stage-num">02</span><div><b>Etapa 2 · Continuidad</b><small>Segundo trimestre</small></div></div>
+        </div>
+        <div class="flow-areas">
+          <div class="area"><b>Producción Musical</b></div>
+          <div class="area"><b>Desarrollo Artístico</b></div>
+          <div class="area"><b>Marketing</b></div>
+          <div class="area"><b>Desarrollo Digital</b></div>
+          <div class="area"><b>Booking y RP</b></div>
+          <div class="area"><b>Necesidades del Artista</b></div>
+        </div>
+        <div class="flow-rail"><span class="rail-dot"></span> Dirección Operativa · eje transversal del plan</div>
+        <p class="flow-note">El trabajo fluye de forma transversal: Dirección Operativa cruza todas las áreas en ambas etapas, alineado al diagrama de Gantt y con reportes periódicos para el inversionista.</p>
       </div>
       <div class="note" style="margin-top:16px;">
         <b>Nuestro método.</b> Plan por etapas trimestrales con seguimiento permanente y reportes periódicos para el inversionista. Los equipos de grabación de contenido se cargan al total de la propuesta.
