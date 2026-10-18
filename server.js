@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
-const ENTRY = 'Propuesta Comercial OKAN - Inversion 3 Artistas.html';
+const ENTRY = 'index.html';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
