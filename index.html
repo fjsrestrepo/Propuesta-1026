@@ -162,9 +162,12 @@
   .stage b{display:block;font-size:14px;color:var(--cream);}
   .stage small{color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
   .stage-arrow{font-size:24px;color:var(--acc);font-weight:700;line-height:1;}
-  .flow-areas{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-  .area{position:relative;border:1px solid var(--line);background:var(--ink2);border-radius:10px;padding:12px 8px;text-align:center;transition:border-color .18s ease, background .18s ease;}
-  .area b{display:block;font-size:12.5px;color:var(--cream);line-height:1.3;}
+  .flow-areas{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+  .area{position:relative;border:1px solid var(--line);background:var(--ink2);border-radius:10px;padding:12px 12px 14px;text-align:center;transition:border-color .18s ease, background .18s ease;}
+  .area b{display:block;font-size:12.5px;color:var(--cream);line-height:1.3;margin-bottom:2px;}
+  .area-steps{list-style:none;margin:8px 0 0;padding:0;text-align:left;}
+  .area-steps li{position:relative;font-size:11px;color:var(--muted);line-height:1.45;padding-left:13px;margin-top:5px;}
+  .area-steps li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:var(--acc);}
   .area::after{content:"";position:absolute;left:50%;bottom:-15px;width:2px;height:15px;background:var(--acc-line);transform:translateX(-50%);}
   .area:hover{border-color:var(--acc);background:var(--panel2);}
   .flow-rail{margin-top:15px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--acc-line);background:var(--acc-tint);border-radius:10px;padding:11px 14px;font-size:12px;font-weight:700;color:var(--cream);letter-spacing:.05em;text-transform:uppercase;text-align:center;}
@@ -176,7 +179,7 @@
     .flow-rail{margin-top:6px;}
   }
   @media (max-width:480px){
-    .flow-areas{grid-template-columns:repeat(2,1fr);}
+    .flow-areas{grid-template-columns:1fr;}
     .stage{padding:8px 12px;}
     .stage-num{font-size:20px;}
     .stage b{font-size:13px;}
@@ -366,12 +369,46 @@
           <div class="stage"><span class="stage-num">02</span><div><b>Etapa 2 · Continuidad</b><small>Segundo trimestre</small></div></div>
         </div>
         <div class="flow-areas">
-          <div class="area"><b>Producción Musical</b></div>
-          <div class="area"><b>Desarrollo Artístico</b></div>
-          <div class="area"><b>Marketing</b></div>
-          <div class="area"><b>Desarrollo Digital</b></div>
-          <div class="area"><b>Booking y RP</b></div>
-          <div class="area"><b>Necesidades del Artista</b></div>
+          <div class="area"><b>Producción Musical</b>
+            <ul class="area-steps">
+              <li>Producción de canciones</li>
+              <li>Audiovisuales (Visualizer Pro)</li>
+              <li>Locaciones de grabación</li>
+              <li>Distribución en plataformas</li>
+            </ul>
+          </div>
+          <div class="area"><b>Desarrollo Artístico</b>
+            <ul class="area-steps">
+              <li>Identidad visual</li>
+              <li>Dirección artística</li>
+              <li>Diseño gráfico y carátulas</li>
+              <li>Piezas para redes</li>
+            </ul>
+          </div>
+          <div class="area"><b>Marketing</b>
+            <ul class="area-steps">
+              <li>Community management</li>
+              <li>Creación y edición de contenido</li>
+              <li>Pauta en Meta Ads</li>
+              <li>Activación de comunidad</li>
+            </ul>
+          </div>
+          <div class="area"><b>Desarrollo Digital</b>
+            <ul class="area-steps">
+              <li>Diagnóstico de audiencia</li>
+              <li>Micro influencers</li>
+              <li>Tendencias en TikTok</li>
+              <li>Posicionamiento en YouTube</li>
+            </ul>
+          </div>
+          <div class="area"><b>Booking y RP</b>
+            <ul class="area-steps">
+              <li>Gestión de booking</li>
+              <li>Relaciones públicas (Valle)</li>
+              <li>Transporte y viáticos</li>
+              <li>Tráfico en establecimientos</li>
+            </ul>
+          </div>
         </div>
         <div class="flow-rail"><span class="rail-dot"></span> Dirección Operativa · eje transversal del plan</div>
         <p class="flow-note">El trabajo fluye de forma transversal: Dirección Operativa cruza todas las áreas en ambas etapas, alineado al diagrama de Gantt y con reportes periódicos para el inversionista.</p>
@@ -721,7 +758,7 @@
     <div class="tbl-wrap">
       <div class="block-title">Alcance del proyecto</div>
       <div class="note">
-        Desarrollo artístico integral 360° de los artistas <b>Miguel La M</b>, <b>Jhon Jiménez</b> y <b>Luis08</b>, estructurado en dos etapas trimestrales. Incluye producción musical, identidad visual, marketing, desarrollo digital, booking y soporte de necesidades del artista, conforme al detalle de cada propuesta individual y de la propuesta consolidada (hoja X3). El vestuario y accesorios, junto con los equipos de grabación de contenido, se incluyen como costo de la propuesta. La gestión fuera del país (valores y presentaciones) estará a cargo de los inversionistas.
+        Desarrollo artístico integral 360° de los artistas <b>Miguel La M</b>, <b>Jhon Jiménez</b> y <b>Luis08</b>, estructurado en dos etapas trimestrales. Incluye producción musical, identidad visual, marketing, desarrollo digital, booking y soporte de necesidades del artista, conforme al detalle de cada propuesta individual y de la propuesta consolidada (hoja X3). El vestuario y accesorios, junto con los equipos de grabación de contenido, se incluyen como costo de la propuesta. La gestión fuera de Colombia estará a cargo de los inversionistas, abarcando presentaciones, featurings (colaboraciones) e inversiones adicionales.
       </div>
 
       <div class="block-title">Condición estratégica</div>
