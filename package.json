@@ -1,0 +1,9 @@
+{
+  "name": "okan-propuesta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Propuesta comercial OKAN - Inversión 3 artistas (HTML estático servido con Node)",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Comercial — OKAN MUSIC COMPANY · Inversión 3 Artistas</title>
+<link rel="icon" type="image/svg+xml" href="Imagenes/Logotipo OKAN - NEGRO.svg">
+<style>
+  :root{
+    --ink:#111010;--ink2:#161414;--panel:#1d1a1a;--panel2:#262222;
+    --line:#332e2e;--gold:#dbf343;--gold-soft:#e9f78c;--gold-deep:#b9d429;
+    --cream:#f7f7f7;--muted:#b6b1b1;--muted2:#7d7878;--good:#dbf343;--accent:#680bd6;
+    --acc:#dbf343;--acc-soft:#e9f78c;--acc-deep:#b9d429;
+    --acc-tint:rgba(219,243,67,.10);--acc-tint2:rgba(219,243,67,.16);--acc-tint3:rgba(219,243,67,.08);
+    --acc-line:rgba(219,243,67,.5);--acc-line2:rgba(219,243,67,.45);--acc-glow:rgba(219,243,67,.14);
+  }
+  #miguel,#okan,#comparativo{
+    --acc:#c39dff;--acc-soft:#d8c4f7;--acc-deep:#8f4ee0;
+    --acc-tint:rgba(172,121,232,.10);--acc-tint2:rgba(172,121,232,.16);--acc-tint3:rgba(172,121,232,.08);
+    --acc-line:rgba(172,121,232,.5);--acc-line2:rgba(172,121,232,.45);--acc-glow:rgba(172,121,232,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Halyard Display','Halyard Display Micro','Century Gothic','Segoe UI',Arial,sans-serif;
+    background:var(--ink);color:var(--cream);
+    -webkit-font-smoothing:antialiased;line-height:1.5;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:34px 26px 80px;}
+
+  /* ---------- SHEETS (pages) ---------- */
+  .sheet{
+    background:linear-gradient(180deg,var(--ink2),var(--ink));
+    border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    margin:0 0 30px;box-shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+  .sheet-head{
+    padding:26px 32px 22px;border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(900px 260px at 12% -20%, var(--acc-glow), transparent 60%),
+      radial-gradient(700px 240px at 95% 0%, rgba(104,11,214,.22), transparent 55%),
+      var(--ink2);
+    position:relative;
+  }
+  .sheet-head .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--acc);font-weight:700;}
+  .sheet-head h2{font-size:34px;letter-spacing:.01em;font-weight:800;margin-top:6px;color:var(--cream);}
+  .sheet-head h2 span{color:var(--acc);}
+  .sheet-head p.lead{color:var(--muted);max-width:820px;margin-top:10px;font-size:15px;}
+  /* ---------- COVER ---------- */
+  .cover{
+    text-align:left;padding:64px 46px 56px;
+    background:
+      radial-gradient(1000px 460px at 50% -10%, rgba(219,243,67,.16), transparent 62%),
+      radial-gradient(900px 520px at 50% 115%, rgba(104,11,214,.32), transparent 60%),
+      linear-gradient(180deg,#141213,#111010);
+  }
+  .logo{width:88px;height:88px;margin:0;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(104,11,214,.42);flex:none;}
+  .logo img{width:100%;height:100%;display:block;}
+  .cover-brand{display:flex;align-items:center;gap:18px;}
+  .wordmark{font-size:15px;letter-spacing:.4em;color:var(--gold);font-weight:700;text-transform:uppercase;}
+  .wordmark small{letter-spacing:.34em;color:var(--muted);font-size:11px;display:block;margin-top:8px;}
+  .cover .rule{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:34px 0;}
+  .cover h1{font-size:52px;line-height:1.08;font-weight:800;max-width:900px;margin:6px 0 0;}
+  .cover h1 .g{color:var(--gold);}
+  .cover .sub{font-size:17px;color:var(--muted);margin-top:18px;}
+  .chips{display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap;margin:30px 0 4px;}
+  .chip{border:1px solid var(--line);background:var(--panel);padding:10px 18px;border-radius:100px;font-size:14px;color:var(--cream);transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;}
+  .chip b{color:var(--gold);}
+  .chip:hover{transform:translateY(-2px);border-color:#c39dff;box-shadow:0 10px 26px rgba(104,11,214,.3);}
+  .cover .meta{margin-top:38px;font-size:12.5px;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;}
+  .cover .meta b{color:var(--muted);}
+
+  /* ---------- SUMMARY CARDS ---------- */
+  .grid{display:grid;gap:14px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);}
+  .card .val{font-size:26px;font-weight:800;margin-top:6px;color:var(--cream);}
+  .card .val.g{color:var(--acc);}
+  .card .sub{font-size:12.5px;color:var(--muted2);margin-top:4px;}
+  .card.hl{border-color:var(--acc-line);background:linear-gradient(180deg,var(--acc-tint),var(--panel));}
+  .card:hover{transform:translateY(-3px);border-color:#c39dff;box-shadow:0 16px 36px rgba(104,11,214,.32);}
+  .card:hover .lbl{color:var(--acc);}
+
+  /* ---------- TABLES ---------- */
+  .tbl-wrap{padding:22px 32px 26px;overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  thead th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap;}
+  thead th.num, td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tbody td{padding:9px 10px;border-bottom:1px solid rgba(42,42,54,.55);vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td.concept{color:var(--cream);}
+  tbody td.concept small{display:block;color:var(--muted2);font-size:11.5px;margin-top:1px;}
+  td.detail{color:var(--muted);font-size:12.5px;white-space:nowrap;}
+  .grp td{background:var(--panel2);color:var(--acc-soft);font-weight:800;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;padding:11px 10px;border-top:1px solid var(--line);}
+  .total-row td{border-top:1px solid var(--acc);font-weight:800;color:var(--cream);font-size:15px;}
+  .total-row td.g{color:var(--acc);}
+  .tbl-wrap tbody tr:not(.grp):hover td{background:rgba(172,121,232,.07);}
+  .foot{margin-top:14px;font-size:12px;color:var(--muted2);line-height:1.6;}
+
+  /* ---------- BADGES ---------- */
+  .badge{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:100px;border:1px solid var(--line);color:var(--muted);}
+  .badge.g{color:var(--acc);border-color:var(--acc-line2);background:var(--acc-tint3);}
+  .badge.a{color:var(--acc);border-color:var(--acc-line);background:var(--acc-tint2);}
+
+  /* ---------- COMPARE ---------- */
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .kpi .card .val{font-size:22px;}
+  .note{border-left:3px solid var(--acc);background:var(--panel);padding:14px 18px;border-radius:0 12px 12px 0;font-size:13.5px;color:var(--cream);transition:background .18s ease, box-shadow .18s ease;}
+  .note b{color:var(--acc);}
+  .note:hover{background:var(--panel2);box-shadow:0 12px 26px rgba(104,11,214,.22);}
+  .terms{margin:6px 0 0 20px;color:var(--cream);}
+  .terms li{margin:10px 0;font-size:13.5px;line-height:1.65;color:var(--muted);}
+  .terms li b{color:var(--acc);}
+
+  .foot-brand{margin-top:36px;text-align:center;color:var(--muted2);font-size:12px;letter-spacing:.12em;display:none;}
+  .foot-brand b{color:var(--gold);}
+
+  /* ---------- BLOCK TITLE ---------- */
+  .block-title{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--acc);font-weight:700;margin:26px 0 6px;}
+
+  /* ---------- CHART ---------- */
+  .chart{margin:22px 0 8px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--panel);}
+  .chart-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+  .chart-head .kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--acc);font-weight:700;}
+  .chart-legend{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
+  .legend-key{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  .legend-key.ind{background:#c39dff;}
+  .legend-key.x3{background:var(--gold);}
+  .chart-groups{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;}
+  .chart-group{text-align:center;}
+  .chart-group-label{font-size:12.5px;color:var(--muted);letter-spacing:.03em;font-weight:600;margin-bottom:34px;}
+  .cols{display:flex;justify-content:center;align-items:flex-end;gap:22px;}
+  .col{display:flex;flex-direction:column;align-items:center;width:92px;}
+  .col-track{width:100%;height:170px;display:flex;align-items:flex-end;justify-content:center;}
+  .col-bar{width:72px;border-radius:6px 6px 0 0;position:relative;transition:filter .18s ease;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .col-bar.ind{background:linear-gradient(180deg,#c39dff,#8f4ee0);}
+  .col-bar.x3{background:linear-gradient(180deg,#dbf343,#b9d429);}
+  .col-bar:hover{filter:brightness(1.15);}
+  .col-bar span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:11.5px;font-weight:700;white-space:nowrap;}
+  .col-bar.ind span{color:#c39dff;}
+  .col-bar.x3 span{color:var(--gold);}
+  .col-tag{font-size:10.5px;color:var(--muted2);margin-top:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .chart-note{margin-top:14px;font-size:12px;color:var(--muted2);}
+
+  /* ---------- HOW WE WORK (Nosotros) ---------- */
+  .how{display:grid;gap:10px;}
+  .how-item{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);transition:border-color .18s ease, background .18s ease;}
+  .how-item:hover{border-color:#c39dff;background:var(--panel2);}
+  .how-num{font-weight:800;color:var(--acc);font-size:20px;line-height:1.1;flex:none;width:34px;}
+  .how-item b{display:block;color:var(--cream);font-size:14px;margin-bottom:3px;}
+  .how-item p{color:var(--muted);font-size:13px;line-height:1.55;}
+
+  /* ---------- ETAPA 2 COLLAPSIBLE ---------- */
+  .etapa2{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;}
+  .etapa2 summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--cream);font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .18s;}
+  .etapa2 summary::-webkit-details-marker{display:none;}
+  .etapa2 summary:hover{color:var(--acc);}
+  .etapa2 summary::after{content:"+";font-size:20px;font-weight:800;color:var(--acc);transition:transform .18s;line-height:1;}
+  .etapa2[open] summary::after{content:"−";transform:rotate(180deg);}
+  .etapa2 summary .t2{font-size:12px;color:var(--muted2);font-weight:600;white-space:nowrap;}
+  .etapa2-body{padding:4px 18px 16px;}
+  .etapa2-body table{font-size:12.5px;}
+
+  /* ---------- HEADER / NAV ---------- */
+  .topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap;padding:12px 26px;background:rgba(17,16,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-logo{width:40px;height:40px;border-radius:10px;box-shadow:0 6px 18px rgba(104,11,214,.4);display:block;}
+  .brand-txt{font-weight:800;letter-spacing:.16em;font-size:15px;color:var(--gold);text-transform:uppercase;line-height:1.1;}
+  .brand-txt small{display:block;font-size:9px;letter-spacing:.32em;color:var(--muted);font-weight:600;}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .tabs button{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-family:inherit;font-size:13px;padding:8px 14px;border-radius:100px;cursor:pointer;transition:.18s;letter-spacing:.02em;}
+  .tabs button:hover{color:var(--cream);border-color:var(--gold);}
+  .tabs button.active{background:var(--gold);color:#111010;border-color:var(--gold);font-weight:800;}
+
+  /* ---------- PANELS (tabs) ---------- */
+  .sheet{display:none;}
+  .sheet.active{display:block;animation:tabIn .28s ease;}
+  @keyframes tabIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* ---------- PAGER ---------- */
+  .pager{position:fixed;bottom:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 26px;background:rgba(17,16,16,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);}
+  .pager button{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--cream);font-family:inherit;font-size:13px;padding:9px 16px;border-radius:100px;cursor:pointer;transition:.18s;}
+  .pager button:hover{border-color:var(--gold);color:var(--gold);}
+  .pager #pageLabel{font-size:12.5px;color:var(--muted);letter-spacing:.1em;font-variant-numeric:tabular-nums;}
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;}
+    .topbar,.pager{display:none !important;}
+    .wrap{max-width:none;padding:0;}
+    .sheet{display:block !important;border-radius:0;border:1px solid #ddd;box-shadow:none;break-inside:avoid;page-break-inside:avoid;margin:0 0 22px;}
+    .sheet-head,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .sheet{page-break-inside:avoid;}
+    .foot-brand{display:block;}
+  }
+  @media (max-width:760px){
+    .g2,.g3,.kpi{grid-template-columns:1fr 1fr;}
+    .cover h1{font-size:34px;}
+    .sheet-head h2{font-size:26px;}
+    .tbl-wrap{padding:18px 16px 22px;}
+    .chart-groups{flex-direction:column;align-items:center;}
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="brand-logo" src="Imagenes/Logotipo OKAN - NEGRO.svg" alt="OKAN">
+    <div class="brand-txt">OKAN<small>MUSIC COMPANY</small></div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button class="active" data-target="inicio">Inicio</button>
+    <button data-target="nosotros">Nosotros</button>
+    <button data-target="miguel">Miguel La M</button>
+    <button data-target="jhon">Jhon Jiménez</button>
+    <button data-target="okan">Luis08</button>
+    <button data-target="x3">Propuesta X3</button>
+    <button data-target="comparativo">Comparativo</button>
+    <button data-target="resumen">Resumen y Notas</button>
+    <button data-target="condiciones">Condiciones</button>
+  </nav>
+</header>
+<div class="wrap">
+
+  <!-- ===================== PORTADA ===================== -->
+  <div class="sheet cover active" id="inicio">
+    <div class="cover-brand">
+      <div class="logo"><img src="Imagenes/Logotipo OKAN - NEGRO.svg" alt="Logotipo OKAN"></div>
+      <div class="wordmark">OKAN<span style="color:var(--cream)"> MUSIC COMPANY</span>
+        <small>Propuesta comercial · Confidencial</small>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <h1>Propuesta de <span class="g">Inversión</span><br>Desarrollo Artístico Integral</h1>
+    <p class="sub">Portafolio de tres artistas · Modelo 360° de posicionamiento y crecimiento musical</p>
+    <div class="chips">
+      <span class="chip">🎤 <b>Miguel La M</b></span>
+      <span class="chip">🎤 <b>Jhon Jiménez</b></span>
+      <span class="chip">🎤 <b>Luis08</b></span>
+      <span class="chip" style="border-color:rgba(219,243,67,.5)">⚡ <b>Propuesta consolidada X3</b></span>
+    </div>
+    <div class="meta">
+      Preparado por <b>OKAN MUSIC COMPANY</b> · Octubre 17 de 2026 · Referencia: Cotización OKAN 171026
+    </div>
+  </div>
+
+  <!-- ===================== NOSOTROS ===================== -->
+  <div class="sheet" id="nosotros">
+    <div class="sheet-head">
+      <div class="kicker">Quiénes somos · Cómo trabajamos</div>
+      <h2>Nosotros <span>OKAN MUSIC COMPANY</span></h2>
+      <p class="lead">Somos una compañía de desarrollo artístico integral. Nuestro modelo 360° acompaña a cada artista en todas las áreas que necesita para crecer de forma profesional, medible y sostenible. A continuación detallamos cómo trabajamos en cada rubro de la propuesta.</p>
+      <div style="margin-top:14px;"><span class="badge g">Modelo 360°</span> <span class="badge g">Equipo multidisciplinar</span> <span class="badge a">Resultados medibles</span></div>
+    </div>
+    <div class="tbl-wrap">
+      <div class="how">
+        <div class="how-item"><span class="how-num">01</span><div><b>Dirección Operativa</b><p>Dirección, coordinación y organización de todo el plan: diagnóstico, definición de la estrategia y acompañamiento permanente, además de cronogramas, trabajo de campo y reportes periódicos de avance al inversionista. Es el eje transversal que garantiza que cada área se ejecute a tiempo y alineada al diagrama de Gantt de cada etapa.</p></div></div>
+        <div class="how-item"><span class="how-num">02</span><div><b>Producción Musical</b><p>Producción completa de canciones, audiovisuales (Visualizer Pro) y locaciones de grabación, dejando el material listo para distribución en plataformas.</p></div></div>
+        <div class="how-item"><span class="how-num">03</span><div><b>Desarrollo Artístico</b><p>Construcción de identidad visual, dirección artística y diseño gráfico: carátulas, piezas para redes sociales y banners coherentes con la imagen del artista.</p></div></div>
+        <div class="how-item"><span class="how-num">04</span><div><b>Marketing</b><p>Community management operativo (creación, edición y publicación de contenido) y pauta en Meta Ads para amplificar cada lanzamiento y mantener activa la comunidad.</p></div></div>
+        <div class="how-item"><span class="how-num">05</span><div><b>Desarrollo Digital del Artista</b><p>Estrategia digital con diagnóstico de audiencia y competencia, campañas de micro influencers, posicionamiento en tendencias de TikTok y visitas segmentadas en YouTube.</p></div></div>
+        <div class="how-item"><span class="how-num">06</span><div><b>Estrategia y Gestión de Booking y RP</b><p>Gestión de booking y relaciones públicas regionales (Valle): transporte, viáticos y tráfico en establecimientos para llevar al artista a escenarios reales.</p></div></div>
+        <div class="how-item"><span class="how-num">07</span><div><b>Necesidades del Artista</b><p>Soporte de vivienda, movilidad, alimentación, vestuario, incentivos y equipos de trabajo para que el artista se concentre en crear música y conectar con su público.</p></div></div>
+      </div>
+      <div class="note" style="margin-top:16px;">
+        <b>Nuestro método.</b> Cada plan se divide en dos etapas trimestrales: una Etapa 1 de lanzamiento y consolidación, y una Etapa 2 de continuidad operativa. El trabajo es transversal entre las etapas y está alineado al diagrama de Gantt de cada una, con reportes mensuales y un reporte de cierre al final de cada etapa para el inversionista. Los equipos de grabación de contenido se cargan al total de la propuesta.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== ARTISTA 1 ===================== -->
+  <div class="sheet" id="miguel">
+    <div class="sheet-head">
+      <div class="kicker">Artista 1 · Propuesta individual</div>
+      <h2>Miguel <span>La M</span></h2>
+      <p class="lead">Plan de desarrollo integral con producción musical completa, construcción de identidad visual, marketing, desarrollo digital, booking y soporte de necesidades del artista.</p>
+      <div style="margin-top:14px;"><span class="badge g">Producción musical</span> <span class="badge g">Desarrollo artístico</span> <span class="badge a">Modelo completo</span></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Concepto</th><th>Detalle</th><th class="num">Valor unitario (COP)</th><th class="num">Cant.</th><th class="num">Total Etapa 1 (COP)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Dirección Operativa</td></tr>
+          <tr><td class="concept">Dirección Operativa<small>Dirección, coordinación, organización, diagnóstico, estrategia, acompañamiento, trabajo de campo y reportes</small></td><td class="detail">Meses</td><td class="num">11.400.000</td><td class="num">3</td><td class="num">34.200.000</td></tr>
+          <tr class="grp"><td colspan="5">Producción Musical</td></tr>
+          <tr><td class="concept">Producción Musical Completa<small>COP por canción</small></td><td class="detail">Canciones</td><td class="num">2.400.000</td><td class="num">3</td><td class="num">7.200.000</td></tr>
+          <tr><td class="concept">Audiovisual Visualizer Pro<small>COP por pieza</small></td><td class="detail">Piezas</td><td class="num">3.040.000</td><td class="num">3</td><td class="num">9.120.000</td></tr>
+          <tr><td class="concept">Locación cinematools (12 horas)</td><td class="detail">Por locación</td><td class="num">1.245.000</td><td class="num">3</td><td class="num">3.735.000</td></tr>
+          <tr class="grp"><td colspan="5">Desarrollo Artístico</td></tr>
+          <tr><td class="concept">Construcción e identidad Visual</td><td class="detail">Único pago</td><td class="num">960.000</td><td class="num">1</td><td class="num">960.000</td></tr>
+          <tr><td class="concept">Dirección Artística</td><td class="detail">Único pago</td><td class="num">600.000</td><td class="num">3</td><td class="num">1.800.000</td></tr>
+          <tr><td class="concept">Arte diseño gráfico<small>Carátula, piezas para redes y banners</small></td><td class="detail">Piezas</td><td class="num">720.000</td><td class="num">3</td><td class="num">2.160.000</td></tr>
+          <tr class="grp"><td colspan="5">Marketing</td></tr>
+          <tr><td class="concept">Community Manager<small>Gestión operativa de redes, creación, edición y publicación de contenido</small></td><td class="detail">Meses</td><td class="num">12.000.000</td><td class="num">3</td><td class="num">36.000.000</td></tr>
+          <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="detail">Meses</td><td class="num">960.000</td><td class="num">3</td><td class="num">2.880.000</td></tr>
+          <tr class="grp"><td colspan="5">Desarrollo Digital del Artista</td></tr>
+          <tr><td class="concept">Estrategia Digital<small>Diagnóstico, análisis de audiencia, objetivos y posicionamiento</small></td><td class="detail">Pago trimestral</td><td class="num">10.680.000</td><td class="num">1</td><td class="num">10.680.000</td></tr>
+          <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">Visitas YouTube segmentadas</td><td class="detail">Canciones</td><td class="num">630.000</td><td class="num">3</td><td class="num">1.890.000</td></tr>
+          <tr class="grp"><td colspan="5">Estrategia y Gestión Booking y RP (Valle)</td></tr>
+          <tr><td class="concept">Transporte y Viáticos</td><td class="detail">Único pago</td><td class="num">6.140.000</td><td class="num">1</td><td class="num">6.140.000</td></tr>
+          <tr><td class="concept">Tráfico en Establecimiento</td><td class="detail">Pago trimestral</td><td class="num">5.500.000</td><td class="num">1</td><td class="num">5.500.000</td></tr>
+          <tr><td class="concept">Imprevistos Generales</td><td class="detail">Único pago</td><td class="num">6.578.977</td><td class="num">1</td><td class="num">6.578.977</td></tr>
+          <tr class="grp"><td colspan="5">Necesidades del Artista</td></tr>
+          <tr><td class="concept">ARBNB (Vivienda Artista)</td><td class="detail">Mensual</td><td class="num">1.500.000</td><td class="num">3</td><td class="num">4.500.000</td></tr>
+          <tr><td class="concept">Movilidad</td><td class="detail">Mensual</td><td class="num">1.400.000</td><td class="num">3</td><td class="num">4.200.000</td></tr>
+          <tr><td class="concept">Alimentación</td><td class="detail">Mensual</td><td class="num">1.000.000</td><td class="num">3</td><td class="num">3.000.000</td></tr>
+          <tr><td class="concept">Computador</td><td class="detail">Único pago</td><td class="num">2.500.000</td><td class="num">1</td><td class="num">2.500.000</td></tr>
+          <tr><td class="concept">Cámara profesional</td><td class="detail">Único pago</td><td class="num">1.800.000</td><td class="num">1</td><td class="num">1.800.000</td></tr>
+          <tr><td class="concept">Micrófonos</td><td class="detail">Único pago</td><td class="num">550.000</td><td class="num">1</td><td class="num">550.000</td></tr>
+          <tr><td class="concept">Trípode, luces y accesorios</td><td class="detail">Único pago</td><td class="num">450.000</td><td class="num">1</td><td class="num">450.000</td></tr>
+          <tr><td class="concept">Programas y herramientas de edición</td><td class="detail">Meses</td><td class="num">156.800</td><td class="num">3</td><td class="num">470.400</td></tr>
+          <tr class="total-row"><td class="concept">Total Etapa 1<small>≈ USD 47.146</small></td><td class="detail"></td><td class="num"></td><td class="num"></td><td class="num g">150.274.377</td></tr>
+        </tbody>
+      </table>
+      <div class="foot">* Los equipos de grabación de contenido se cargan al total de la propuesta. · Rubros de pago único no se repiten en la Etapa 2.</div>
+      <div class="grid g3" style="margin-top:18px;">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 150.274.377</div><div class="sub">≈ USD 47.146</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 127.295.400</div><div class="sub">≈ USD 39.937</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 87.083</div><div class="sub">≈ COP 277.569.777</div></div>
+      </div>
+      <details class="etapa2">
+        <summary>Detalle de la Etapa 2 <span class="t2">COP 127.295.400 · ≈ USD 39.937</span></summary>
+        <div class="etapa2-body">
+          <table>
+            <thead><tr><th>Concepto</th><th class="num">Total Etapa 2 (COP)</th></tr></thead>
+            <tbody>
+              <tr><td class="concept">Dirección Operativa</td><td class="num">34.200.000</td></tr>
+              <tr><td class="concept">Producción Musical Completa</td><td class="num">7.200.000</td></tr>
+              <tr><td class="concept">Audiovisual Visualizer Pro</td><td class="num">6.120.000</td></tr>
+              <tr><td class="concept">Locación cinematools (12 horas)</td><td class="num">3.735.000</td></tr>
+              <tr><td class="concept">Arte diseño gráfico</td><td class="num">2.160.000</td></tr>
+              <tr><td class="concept">Community Manager</td><td class="num">36.000.000</td></tr>
+              <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="num">2.880.000</td></tr>
+              <tr><td class="concept">Estrategia Digital</td><td class="num">5.340.000</td></tr>
+              <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">Visitas YouTube segmentadas</td><td class="num">1.890.000</td></tr>
+              <tr><td class="concept">Transporte y Viáticos</td><td class="num">6.140.000</td></tr>
+              <tr><td class="concept">Tráfico en Establecimiento</td><td class="num">5.500.000</td></tr>
+              <tr><td class="concept">ARBNB (Vivienda Artista)</td><td class="num">4.500.000</td></tr>
+              <tr><td class="concept">Movilidad</td><td class="num">4.200.000</td></tr>
+              <tr><td class="concept">Alimentación</td><td class="num">3.000.000</td></tr>
+              <tr><td class="concept">Programas y herramientas de edición</td><td class="num">470.400</td></tr>
+              <tr class="total-row"><td class="concept">Total Etapa 2</td><td class="num g">127.295.400</td></tr>
+            </tbody>
+          </table>
+          <div class="foot" style="margin-top:10px;">La Etapa 2 excluye los rubros de pago único (identidad visual, dirección artística, imprevistos y equipos).</div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ===================== ARTISTA 2 ===================== -->
+  <div class="sheet" id="jhon">
+    <div class="sheet-head">
+      <div class="kicker">Artista 2 · Propuesta individual</div>
+      <h2>Jhon <span>Jiménez</span></h2>
+      <p class="lead">Plan de posicionamiento y crecimiento con enfoque en marketing, desarrollo digital, gestión de booking y soporte de movilidad.</p>
+      <div style="margin-top:14px;"><span class="badge g">Marketing</span> <span class="badge g">Desarrollo digital</span> <span class="badge a">Enfoque promocional</span></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Concepto</th><th>Detalle</th><th class="num">Valor unitario (COP)</th><th class="num">Cant.</th><th class="num">Total Etapa 1 (COP)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Dirección Operativa</td></tr>
+          <tr><td class="concept">Dirección Operativa<small>Dirección, coordinación, organización, diagnóstico, estrategia, acompañamiento, trabajo de campo y reportes</small></td><td class="detail">Meses</td><td class="num">11.400.000</td><td class="num">3</td><td class="num">34.200.000</td></tr>
+          <tr class="grp"><td colspan="5">Marketing</td></tr>
+          <tr><td class="concept">Community Manager<small>Gestión operativa de redes, creación, edición y publicación de contenido</small></td><td class="detail">Meses</td><td class="num">12.000.000</td><td class="num">3</td><td class="num">36.000.000</td></tr>
+          <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="detail">Meses</td><td class="num">960.000</td><td class="num">3</td><td class="num">2.880.000</td></tr>
+          <tr class="grp"><td colspan="5">Desarrollo Digital del Artista</td></tr>
+          <tr><td class="concept">Estrategia Digital<small>Diagnóstico, análisis de audiencia, objetivos y posicionamiento</small></td><td class="detail">Pago trimestral</td><td class="num">10.680.000</td><td class="num">1</td><td class="num">10.680.000</td></tr>
+          <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">Visitas YouTube segmentadas</td><td class="detail">Canciones</td><td class="num">630.000</td><td class="num">3</td><td class="num">1.890.000</td></tr>
+          <tr class="grp"><td colspan="5">Estrategia y Gestión Booking y RP (Valle)</td></tr>
+          <tr><td class="concept">Transporte y Viáticos</td><td class="detail">Único pago</td><td class="num">6.140.000</td><td class="num">1</td><td class="num">6.140.000</td></tr>
+          <tr><td class="concept">Tráfico en Establecimiento</td><td class="detail">Pago trimestral</td><td class="num">5.500.000</td><td class="num">1</td><td class="num">5.500.000</td></tr>
+          <tr><td class="concept">Imprevistos Generales</td><td class="detail">Único pago</td><td class="num">6.578.977</td><td class="num">1</td><td class="num">6.578.977</td></tr>
+          <tr class="grp"><td colspan="5">Necesidades del Artista</td></tr>
+          <tr><td class="concept">Movilidad</td><td class="detail">Mensual</td><td class="num">1.400.000</td><td class="num">3</td><td class="num">4.200.000</td></tr>
+          <tr class="total-row"><td class="concept">Total Etapa 1<small>≈ USD 35.147</small></td><td class="detail"></td><td class="num"></td><td class="num"></td><td class="num g">112.028.977</td></tr>
+        </tbody>
+      </table>
+      <div class="foot">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
+      <div class="grid g3" style="margin-top:18px;">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 112.028.977</div><div class="sub">≈ USD 35.147</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 100.110.000</div><div class="sub">≈ USD 31.408</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 66.555</div><div class="sub">≈ COP 212.138.977</div></div>
+      </div>
+      <details class="etapa2">
+        <summary>Detalle de la Etapa 2 <span class="t2">COP 100.110.000 · ≈ USD 31.408</span></summary>
+        <div class="etapa2-body">
+          <table>
+            <thead><tr><th>Concepto</th><th class="num">Total Etapa 2 (COP)</th></tr></thead>
+            <tbody>
+              <tr><td class="concept">Dirección Operativa</td><td class="num">34.200.000</td></tr>
+              <tr><td class="concept">Community Manager</td><td class="num">36.000.000</td></tr>
+              <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="num">2.880.000</td></tr>
+              <tr><td class="concept">Estrategia Digital</td><td class="num">5.340.000</td></tr>
+              <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">Visitas YouTube segmentadas</td><td class="num">1.890.000</td></tr>
+              <tr><td class="concept">Transporte y Viáticos</td><td class="num">6.140.000</td></tr>
+              <tr><td class="concept">Tráfico en Establecimiento</td><td class="num">5.500.000</td></tr>
+              <tr><td class="concept">Movilidad</td><td class="num">4.200.000</td></tr>
+              <tr class="total-row"><td class="concept">Total Etapa 2</td><td class="num g">100.110.000</td></tr>
+            </tbody>
+          </table>
+          <div class="foot" style="margin-top:10px;">La Etapa 2 excluye los rubros de pago único (imprevistos generales).</div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ===================== ARTISTA 3 ===================== -->
+  <div class="sheet" id="okan">
+    <div class="sheet-head">
+      <div class="kicker">Artista 3 · Propuesta individual</div>
+      <h2>Luis<span>08</span></h2>
+      <p class="lead">Plan de lanzamiento para talento emergente del catálogo, con marketing, desarrollo digital, booking e incentivo económico para el artista.</p>
+      <div style="margin-top:14px;"><span class="badge g">Talento emergente</span> <span class="badge g">Lanzamiento</span> <span class="badge a">Costo optimizado</span></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Concepto</th><th>Detalle</th><th class="num">Valor unitario (COP)</th><th class="num">Cant.</th><th class="num">Total Etapa 1 (COP)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Dirección Operativa</td></tr>
+          <tr><td class="concept">Dirección Operativa<small>Dirección, coordinación, organización, diagnóstico, estrategia, acompañamiento, trabajo de campo y reportes</small></td><td class="detail">Meses</td><td class="num">6.600.000</td><td class="num">3</td><td class="num">19.800.000</td></tr>
+          <tr class="grp"><td colspan="5">Marketing</td></tr>
+          <tr><td class="concept">Community Manager<small>Gestión operativa de redes, creación, edición y publicación de contenido</small></td><td class="detail">Meses</td><td class="num">3.000.000</td><td class="num">3</td><td class="num">9.000.000</td></tr>
+          <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="detail">Meses</td><td class="num">960.000</td><td class="num">3</td><td class="num">2.880.000</td></tr>
+          <tr class="grp"><td colspan="5">Desarrollo Digital del Artista</td></tr>
+          <tr><td class="concept">Estrategia Digital<small>Diagnóstico, análisis de audiencia, objetivos y posicionamiento</small></td><td class="detail">Meses</td><td class="num">2.400.000</td><td class="num">3</td><td class="num">7.200.000</td></tr>
+          <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="detail">Canciones</td><td class="num">660.000</td><td class="num">3</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">Visitas YouTube segmentadas</td><td class="detail">Canciones</td><td class="num">630.000</td><td class="num">3</td><td class="num">1.890.000</td></tr>
+          <tr class="grp"><td colspan="5">Estrategia y Gestión Booking y RP (Valle)</td></tr>
+          <tr><td class="concept">Transporte y Viáticos</td><td class="detail">Meses</td><td class="num">3.000.000</td><td class="num">1</td><td class="num">3.000.000</td></tr>
+          <tr><td class="concept">Tráfico en Establecimiento</td><td class="detail">Pago trimestral</td><td class="num">2.750.000</td><td class="num">1</td><td class="num">2.750.000</td></tr>
+          <tr><td class="concept">Imprevistos Generales</td><td class="detail">Único pago</td><td class="num">6.578.977</td><td class="num">1</td><td class="num">6.578.977</td></tr>
+          <tr class="grp"><td colspan="5">Necesidades del Artista</td></tr>
+          <tr><td class="concept">Movilidad</td><td class="detail">Mensual</td><td class="num">1.400.000</td><td class="num">3</td><td class="num">4.200.000</td></tr>
+          <tr><td class="concept">Incentivo Económico</td><td class="detail">Mensual</td><td class="num">2.000.000</td><td class="num">3</td><td class="num">6.000.000</td></tr>
+          <tr class="total-row"><td class="concept">Total Etapa 1<small>≈ USD 21.101</small></td><td class="detail"></td><td class="num"></td><td class="num"></td><td class="num g">67.258.977</td></tr>
+        </tbody>
+      </table>
+      <div class="foot">* La Etapa 2 contempla la continuidad operativa sin los rubros de pago único.</div>
+      <div class="grid g3" style="margin-top:18px;">
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val">COP 67.258.977</div><div class="sub">≈ USD 21.101</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val">COP 60.680.000</div><div class="sub">≈ USD 19.037</div></div>
+        <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 40.139</div><div class="sub">≈ COP 127.938.977</div></div>
+      </div>
+      <details class="etapa2">
+        <summary>Detalle de la Etapa 2 <span class="t2">COP 60.680.000 · ≈ USD 19.037</span></summary>
+        <div class="etapa2-body">
+          <table>
+            <thead><tr><th>Concepto</th><th class="num">Total Etapa 2 (COP)</th></tr></thead>
+            <tbody>
+              <tr><td class="concept">Dirección Operativa</td><td class="num">19.800.000</td></tr>
+              <tr><td class="concept">Community Manager</td><td class="num">9.000.000</td></tr>
+              <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="num">2.880.000</td></tr>
+              <tr><td class="concept">Estrategia Digital</td><td class="num">7.200.000</td></tr>
+              <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="num">1.980.000</td></tr>
+              <tr><td class="concept">Visitas YouTube segmentadas</td><td class="num">1.890.000</td></tr>
+              <tr><td class="concept">Transporte y Viáticos</td><td class="num">3.000.000</td></tr>
+              <tr><td class="concept">Tráfico en Establecimiento</td><td class="num">2.750.000</td></tr>
+              <tr><td class="concept">Movilidad</td><td class="num">4.200.000</td></tr>
+              <tr><td class="concept">Incentivo Económico</td><td class="num">6.000.000</td></tr>
+              <tr class="total-row"><td class="concept">Total Etapa 2</td><td class="num g">60.680.000</td></tr>
+            </tbody>
+          </table>
+          <div class="foot" style="margin-top:10px;">La Etapa 2 excluye los rubros de pago único (imprevistos generales).</div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ===================== PROPUESTA X3 ===================== -->
+  <div class="sheet" id="x3">
+    <div class="sheet-head">
+      <div class="kicker">Propuesta consolidada · Hoja X3</div>
+      <h2>Los tres artistas en <span>una sola operación</span></h2>
+      <p class="lead">La hoja X3 concentra la operación de Miguel La M, Jhon Jiménez y Luis08 bajo una única dirección, un único equipo de community management y una sola estrategia digital. Esto permite reducir costos compartidos y liberar ahorro que se traduce en un plan más eficiente por artista.</p>
+      <div style="margin-top:14px;"><span class="badge g">3 artistas</span> <span class="badge g">Dirección operativa −30&nbsp;%</span> <span class="badge a">Máxima eficiencia</span></div>
+    </div>
+    <div class="grid g3" style="margin-bottom:18px;">
+      <div class="card"><div class="lbl">Etapa 1 (trimestre 1)</div><div class="val">COP 260.309.532</div><div class="sub">≈ USD 81.668</div></div>
+      <div class="card"><div class="lbl">Etapa 2 (trimestre 2)</div><div class="val">COP 206.694.150</div><div class="sub">≈ USD 64.847</div></div>
+      <div class="card hl"><div class="lbl">Total General</div><div class="val g">USD 146.515</div><div class="sub">≈ COP 467.003.682</div></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Concepto</th><th>Detalle</th><th class="num">Total Etapa 1 (COP)</th><th class="num">Total Etapa 2 (COP)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Dirección Operativa</td></tr>
+          <tr><td class="concept">Dirección Operativa<small>Dirección, coordinación, organización, diagnóstico, estrategia, acompañamiento, trabajo de campo y reportes</small></td><td class="detail">Meses</td><td class="num">76.350.000</td><td class="num">76.350.000</td></tr>
+          <tr class="grp"><td colspan="4">Producción Musical</td></tr>
+          <tr><td class="concept">Producción Musical Completa<small>COP por canción</small></td><td class="detail">Canciones</td><td class="num">7.200.000</td><td class="num">7.200.000</td></tr>
+          <tr><td class="concept">Audiovisual Visualizer Pro<small>COP por pieza</small></td><td class="detail">Piezas</td><td class="num">9.120.000</td><td class="num">6.120.000</td></tr>
+          <tr><td class="concept">Locación cinematools (12 horas)</td><td class="detail">Por locación</td><td class="num">3.735.000</td><td class="num">3.735.000</td></tr>
+          <tr class="grp"><td colspan="4">Desarrollo Artístico</td></tr>
+          <tr><td class="concept">Construcción e identidad visual</td><td class="detail">Único pago</td><td class="num">960.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Dirección Artística</td><td class="detail">Único pago</td><td class="num">1.800.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Arte diseño gráfico<small>Carátula, piezas para redes y banners</small></td><td class="detail">Piezas</td><td class="num">2.160.000</td><td class="num">2.160.000</td></tr>
+          <tr class="grp"><td colspan="4">Marketing</td></tr>
+          <tr><td class="concept">Community Manager<small>Gestión operativa de redes, creación, edición y publicación de contenido</small></td><td class="detail">Meses</td><td class="num">59.250.000</td><td class="num">59.250.000</td></tr>
+          <tr><td class="concept">Presupuesto para pauta en Meta Ads</td><td class="detail">Meses</td><td class="num">8.640.000</td><td class="num">2.880.000</td></tr>
+          <tr class="grp"><td colspan="4">Desarrollo Digital del Artista</td></tr>
+          <tr><td class="concept">Estrategia Digital<small>Diagnóstico, análisis de audiencia, objetivos y posicionamiento</small></td><td class="detail">Pago trimestral</td><td class="num">18.697.500</td><td class="num">9.348.750</td></tr>
+          <tr><td class="concept">Micro Influencer y Tiktoker</td><td class="detail">Canciones</td><td class="num">5.940.000</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">TikTok — posicionamiento en tendencias</td><td class="detail">Canciones</td><td class="num">5.940.000</td><td class="num">1.980.000</td></tr>
+          <tr><td class="concept">Visitas YouTube segmentadas</td><td class="detail">Canciones</td><td class="num">5.670.000</td><td class="num">1.890.000</td></tr>
+          <tr class="grp"><td colspan="4">Estrategia y Gestión Booking y RP (Valle)</td></tr>
+          <tr><td class="concept">Transporte y Viáticos</td><td class="detail">Único pago</td><td class="num">9.230.000</td><td class="num">9.230.000</td></tr>
+          <tr><td class="concept">Tráfico en Establecimiento</td><td class="detail">Pago trimestral</td><td class="num">12.400.000</td><td class="num">12.400.000</td></tr>
+          <tr><td class="concept">Imprevistos Generales</td><td class="detail">Único pago</td><td class="num">9.746.632</td><td class="num">—</td></tr>
+          <tr class="grp"><td colspan="4">Necesidades del Artista</td></tr>
+          <tr><td class="concept">Incentivo</td><td class="detail">Mensual</td><td class="num">4.500.000</td><td class="num">4.500.000</td></tr>
+          <tr><td class="concept">Movilidad</td><td class="detail">Mensual</td><td class="num">4.200.000</td><td class="num">4.200.000</td></tr>
+          <tr><td class="concept">Vestuario y accesorios<small>COP 2.000.000 × 3 artistas</small></td><td class="detail">Único pago</td><td class="num">6.000.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Alimentación</td><td class="detail">Mensual</td><td class="num">3.000.000</td><td class="num">3.000.000</td></tr>
+          <tr><td class="concept">Computador</td><td class="detail">Único pago</td><td class="num">2.500.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Cámara profesional</td><td class="detail">Único pago</td><td class="num">1.800.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Micrófonos</td><td class="detail">Único pago</td><td class="num">550.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Trípode, luces y accesorios</td><td class="detail">Único pago</td><td class="num">450.000</td><td class="num">—</td></tr>
+          <tr><td class="concept">Programas y herramientas de edición</td><td class="detail">Meses</td><td class="num">470.400</td><td class="num">470.400</td></tr>
+          <tr class="total-row"><td class="concept">Total por Etapa<small>≈ USD 81.668 / USD 64.847</small></td><td class="detail"></td><td class="num g">260.309.532</td><td class="num g">206.694.150</td></tr>
+        </tbody>
+      </table>
+      <div class="foot">* Los equipos de grabación de contenido y el vestuario y accesorios (COP 2.000.000 × 3 artistas) se cargan al total de la propuesta. · Los rubros de pago único no se repiten en la Etapa 2. · Total operativo consolidado: COP 467.003.682 (≈ USD 146.515).</div>
+    </div>
+  </div>
+
+  <!-- ===================== COMPARATIVO ===================== -->
+  <div class="sheet" id="comparativo">
+    <div class="sheet-head">
+      <div class="kicker">Cuadro comparativo</div>
+      <h2>Escenarios <span>individuales vs. X3</span></h2>
+      <p class="lead">Operar los tres artistas por separado sumaría aproximadamente USD 193.777. La hoja X3 consolida la operación en USD 146.515, lo que representa un ahorro cercano al 24&nbsp;% frente a la contratación individual.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Propuesta</th><th class="num">Etapa 1 (COP)</th><th class="num">Etapa 2 (COP)</th><th class="num">Total (USD)</th><th>Nota</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="concept">Miguel La M<small>Propuesta individual</small></td><td class="num">150.274.377</td><td class="num">127.295.400</td><td class="num">87.083</td><td class="detail">Modelo completo</td></tr>
+          <tr><td class="concept">Jhon Jiménez<small>Propuesta individual</small></td><td class="num">112.028.977</td><td class="num">100.110.000</td><td class="num">66.555</td><td class="detail">Enfoque promocional</td></tr>
+          <tr><td class="concept">Luis08<small>Propuesta individual</small></td><td class="num">67.258.977</td><td class="num">60.680.000</td><td class="num">40.139</td><td class="detail">Talento emergente</td></tr>
+          <tr><td class="concept">Suma individual<small>Los tres por separado</small></td><td class="num">329.562.331</td><td class="num">288.085.400</td><td class="num">193.777</td><td class="detail">Sin consolidar</td></tr>
+          <tr class="total-row"><td class="concept">X3 — Propuesta consolidada</td><td class="num g">260.309.532</td><td class="num g">206.694.150</td><td class="num g">146.515</td><td class="detail">Consolidada</td></tr>
+        </tbody>
+      </table>
+
+      <div class="chart">
+        <div class="chart-head">
+          <span class="kicker">Comparación visual</span>
+          <div class="chart-legend">
+            <span class="legend-key ind"></span> Suma individual
+            <span class="legend-key x3"></span> X3 consolidada
+          </div>
+        </div>
+        <div class="chart-groups">
+          <div class="chart-group">
+            <div class="chart-group-label">Inversión total (USD)</div>
+            <div class="cols">
+              <div class="col">
+                <div class="col-track"><div class="col-bar ind" style="height:100%"><span>193.777</span></div></div>
+                <div class="col-tag">Individual</div>
+              </div>
+              <div class="col">
+                <div class="col-track"><div class="col-bar x3" style="height:76%"><span>146.515</span></div></div>
+                <div class="col-tag">X3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-note">Comparación solo en dólares (USD): la columna amarilla muestra la propuesta X3 (USD 146.515) frente a la suma individual (USD 193.777). Ahorro por consolidación: ≈ USD 47.262 (24&nbsp;%).</div>
+      </div>
+
+      <div class="grid g3" style="margin-top:18px;">
+        <div class="card hl"><div class="lbl">Ahorro en Etapa 1</div><div class="val g">COP 69.252.799</div><div class="sub">≈ 21&nbsp;% menos que la suma individual</div></div>
+        <div class="card hl"><div class="lbl">Ahorro en Etapa 2</div><div class="val g">COP 81.391.250</div><div class="sub">≈ 28&nbsp;% menos que la suma individual</div></div>
+        <div class="card hl"><div class="lbl">Ahorro total</div><div class="val g">≈ USD 47.262</div><div class="sub">≈ 24&nbsp;% de eficiencia global</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CONDICIONES ===================== -->
+  <div class="sheet" id="condiciones">
+    <div class="sheet-head">
+      <div class="kicker">Términos comerciales</div>
+      <h2>Condiciones <span>del proyecto</span></h2>
+      <p class="lead">Condiciones de alcance, fecha de inicio, plazos y formas de pago, seguimiento y reparto de regalías aplicables a la propuesta de inversión para el desarrollo integral de los tres artistas.</p>
+    </div>
+    <div class="tbl-wrap">
+      <div class="block-title">Alcance del proyecto</div>
+      <div class="note">
+        Desarrollo artístico integral 360° de los artistas <b>Miguel La M</b>, <b>Jhon Jiménez</b> y <b>Luis08</b>, estructurado en dos etapas trimestrales. Incluye producción musical, identidad visual, marketing, desarrollo digital, booking y soporte de necesidades del artista, conforme al detalle de cada propuesta individual y de la propuesta consolidada (hoja X3). El vestuario y accesorios, junto con los equipos de grabación de contenido, se incluyen como costo de la propuesta.
+      </div>
+
+      <div class="block-title">Fecha de inicio y duración</div>
+      <div class="grid g3" style="margin-bottom:14px;">
+        <div class="card"><div class="lbl">Inicio de operación</div><div class="val" style="font-size:20px;">1 de noviembre de 2026</div><div class="sub">Sujeto a aprobación y primer desembolso.</div></div>
+        <div class="card"><div class="lbl">Etapa 1</div><div class="val" style="font-size:20px;">3 meses</div><div class="sub">Trimestre de lanzamiento y consolidación.</div></div>
+        <div class="card"><div class="lbl">Etapa 2</div><div class="val" style="font-size:20px;">3 meses</div><div class="sub">Trimestre de continuidad operativa.</div></div>
+      </div>
+
+      <div class="block-title">Plazos y formas de pago</div>
+      <ol class="terms">
+        <li><b>Primer desembolso (50&nbsp;%).</b> 50&nbsp;% del valor total del proyecto al inicio, previo a la firma del acuerdo de inversión.</li>
+        <li><b>Segundo desembolso (30&nbsp;%).</b> 30&nbsp;% al cierre de la Etapa 1, contra avance verificado y reporte de etapa.</li>
+        <li><b>Saldo final (20&nbsp;%).</b> 20&nbsp;% al final del proyecto, contra entrega total y reporte de cierre de la Etapa 2.</li>
+        <li><b>Formas de pago.</b> Transferencia bancaria o consignación a nombre de OKAN MUSIC COMPANY. Los valores se liquidan en COP; la referencia en USD se calcula con la tasa de la cotización (EUR/COP 3.569,90 · EUR/USD 1,12).</li>
+        <li><b>Mora.</b> Los pagos vencidos generan suspensión de actividades hasta la normalización de cartera.</li>
+      </ol>
+
+      <div class="block-title">Seguimiento y reportes</div>
+      <ol class="terms">
+        <li><b>Reportes mensuales.</b> Se entrega al inversionista un informe de avance mensual con indicadores, ejecución presupuestal y resultados de cada frente de trabajo.</li>
+        <li><b>Reporte por etapa.</b> Al cierre de cada etapa (Etapa 1 y Etapa 2) se presenta un reporte consolidado de resultados, alcance y aprendizajes.</li>
+        <li><b>Trabajo transversal.</b> La operación es transversal entre las etapas y cada frente se ejecuta alineado al diagrama de Gantt de su respectiva etapa.</li>
+      </ol>
+
+      <div class="block-title">Reparto de regalías (royalties)</div>
+      <div class="grid g3" style="margin-bottom:14px;">
+        <div class="card"><div class="lbl">Artista</div><div class="val g">60&nbsp;%</div><div class="sub">De las regalías netas generadas por la música del artista.</div></div>
+        <div class="card"><div class="lbl">OKAN MUSIC COMPANY</div><div class="val g">30&nbsp;%</div><div class="sub">Por la operación, producción y gestión integral.</div></div>
+        <div class="card"><div class="lbl">Fondo de reinversión</div><div class="val g">10&nbsp;%</div><div class="sub">Para marketing, pauta y nuevas producciones del artista.</div></div>
+      </div>
+      <div class="note">
+        <b>Base de regalías.</b> Se calculan sobre los ingresos netos de plataformas de streaming, licencias, sincronización, presentaciones y demás explotaciones del catálogo trabajado durante la vigencia del proyecto. La distribución exacta por título se define en el acuerdo de inversión.
+      </div>
+
+      <div class="block-title">Vigencia y observaciones</div>
+      <ol class="terms">
+        <li><b>Vigencia de la oferta.</b> Los valores y condiciones están sujetos a disponibilidad de agenda y pueden variar por cambios en la tasa de cambio o en el alcance acordado.</li>
+        <li><b>Dirección Operativa.</b> El rubro puede disminuir hasta un 30&nbsp;% según la cantidad de artistas aprobados por los inversionistas.</li>
+        <li><b>Confidencialidad.</b> Este documento es de uso confidencial para la evaluación de la inversión.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ===================== RESUMEN Y NOTAS ===================== -->
+  <div class="sheet" id="resumen">
+    <div class="sheet-head">
+      <div class="kicker">Resumen ejecutivo y condiciones</div>
+      <h2>Visión <span>360°</span> y condiciones comerciales</h2>
+      <p class="lead">OKAN MUSIC COMPANY propone un programa integral de inversión para tres artistas del catálogo, estructurado en dos etapas y con una propuesta consolidada que optimiza los recursos compartidos. Las condiciones comerciales completas se detallan en la pestaña Condiciones.</p>
+    </div>
+    <div class="tbl-wrap">
+      <div class="grid g3" style="margin-bottom:14px;">
+        <div class="card">
+          <div class="lbl">Artista 1 · Miguel La M</div>
+          <div class="val">USD 87.083</div>
+          <div class="sub">Etapa 1: COP 150.274.377 · Etapa 2: COP 127.295.400</div>
+        </div>
+        <div class="card">
+          <div class="lbl">Artista 2 · Jhon Jiménez</div>
+          <div class="val">USD 66.555</div>
+          <div class="sub">Etapa 1: COP 112.028.977 · Etapa 2: COP 100.110.000</div>
+        </div>
+        <div class="card">
+          <div class="lbl">Artista 3 · Luis08</div>
+          <div class="val">USD 40.139</div>
+          <div class="sub">Etapa 1: COP 67.258.977 · Etapa 2: COP 60.680.000</div>
+        </div>
+      </div>
+      <div class="card hl" style="margin-bottom:14px;">
+        <div class="lbl">⚡ Propuesta consolidada — Los tres artistas (hoja X3)</div>
+        <div class="val g">USD 146.515 <span style="font-size:14px;color:var(--muted)">≈ COP 467.003.682</span></div>
+        <div class="sub">Etapa 1: COP 260.309.532 · Etapa 2: COP 206.694.150 — Ahorro por consolidación y descuento en Dirección Operativa</div>
+      </div>
+      <div class="note">
+        <b>¿Por qué consolidar?</b> Operar los tres artistas en paralelo permite compartir equipos de producción, community management, estrategia digital y gestión de booking. El rubro de <b>Dirección Operativa disminuye hasta un 30&nbsp;%</b> según la cantidad de artistas aprobados por los inversionistas.
+      </div>
+
+      <div class="block-title">Notas y condiciones</div>
+      <ol class="terms">
+        <li><b>Moneda y conversión.</b> Los valores se expresan en pesos colombianos (COP). La referencia en dólares (USD) se calcula en la hoja fuente a partir de la tasa EUR/COP 3.569,90 y EUR/USD 1,12, tal como figura en la cotización.</li>
+        <li><b>Etapas.</b> Cada plan se estructura en dos etapas trimestrales (Etapa 1 y Etapa 2). Los rubros catalogados como “único pago” no se repiten en la Etapa 2.</li>
+        <li><b>Seguimiento.</b> Se entregan reportes mensuales de avance y un reporte consolidado al final de cada etapa. El trabajo es transversal entre las etapas y se alinea al diagrama de Gantt de cada una.</li>
+        <li><b>Equipos.</b> Los equipos de grabación de contenido y el vestuario y accesorios se cargan al total de la propuesta.</li>
+        <li><b>Dirección Operativa.</b> El rubro puede disminuir hasta un 30&nbsp;% según la cantidad de artistas aprobados por los inversionistas.</li>
+        <li><b>Alcance de la cotización.</b> La hoja X3 consolida los tres artistas por un total operativo de COP 467.003.682 (≈ USD 146.515), sin honorarios legales adicionales.</li>
+        <li><b>Vigencia.</b> Los precios y condiciones están sujetos a disponibilidad de agenda y pueden variar según cambios en la tasa de cambio o en el alcance acordado.</li>
+      </ol>
+      <div class="note" style="margin-top:14px;">
+        <b>Contacto:</b> OKAN MUSIC COMPANY · Propuesta preparada el 17 de octubre de 2026 · Documento de uso confidencial para evaluación de inversión.
+      </div>
+    </div>
+  </div>
+
+<div class="foot-brand">OKAN <b>MUSIC COMPANY</b> · Propuesta de inversión — Portafolio 3 artistas</div>
+</div>
+
+<footer class="pager">
+  <button id="prevBtn">← Anterior</button>
+  <span id="pageLabel">1 / 9</span>
+  <button id="nextBtn">Siguiente →</button>
+</footer>
+
+<script>
+(function () {
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.sheet'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs button'));
+  // Las Condiciones van al final: los paneles siguen el orden del menú de pestañas.
+  var navOrder = tabs.map(function (b) { return b.getAttribute('data-target'); });
+  panels.sort(function (a, b) { return navOrder.indexOf(a.id) - navOrder.indexOf(b.id); });
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var pageLabel = document.getElementById('pageLabel');
+  var current = 0;
+
+  function go(i) {
+    current = (i + panels.length) % panels.length;
+    panels.forEach(function (p, idx) { p.classList.toggle('active', idx === current); });
+    tabs.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-target') === panels[current].id); });
+    if (pageLabel) pageLabel.textContent = (current + 1) + ' / ' + panels.length;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var idx = panels.findIndex(function (p) { return p.id === b.getAttribute('data-target'); });
+      if (idx > -1) go(idx);
+    });
+  });
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { go(current - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { go(current + 1); });
+
+  panels.forEach(function (p, idx) { p.classList.toggle('active', idx === 0); });
+})();
+</script>
+</body>
+</html>
